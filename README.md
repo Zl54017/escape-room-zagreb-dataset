@@ -32,13 +32,17 @@ Ovaj skup podataka sadrži informacije o escape room igrama dostupnima u Zagrebu
 ```
 escape-room-zagreb-dataset/
 │
-├── escape_room_zagreb.csv
-├── escape_room_zagreb.json
-├── escape_room_dump.sql
 ├── README.md
-└── LICENSE
+├── LICENSE
+├── escape_room.csv
+├── escape_room.json
+└── escape_room_dump.sql
 ```
 
-## Licencija
+## Licenca
 
-Ovaj skup podataka objavljen je pod licencijom [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). To znači da se podaci mogu slobodno koristiti, dijeliti i mijenjati, uz obavezno navođenje izvora i autora.
+Ovaj skup podataka objavljen je pod licencom **Creative Commons CC0 1.0 Universal (Public Domain Dedication)**.
+To znači da se podaci mogu slobodno koristiti, dijeliti, mijenjati i ponovno objavljivati u bilo koje svrhe, uključujući komercijalne, bez potrebe za navođenjem izvora.
+
+Više informacija o licenci dostupno je na službenoj stranici:
+[https://creativecommons.org/publicdomain/zero/1.0/](https://creativecommons.org/publicdomain/zero/1.0/)
