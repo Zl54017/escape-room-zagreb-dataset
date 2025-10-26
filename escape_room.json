@@ -1,0 +1,546 @@
+[
+    {
+        "id": 1,
+        "naziv": "Tajna Profesora Baltazara",
+        "adresa": "Ulica kneza Borne 12",
+        "tezina": 4.5,
+        "trajanje_minute": 75,
+        "maks_igraca": 5,
+        "web_stranica": "https://www.cluego.eu/tajna-profesora-balthazara/",
+        "tvrtka": {
+            "naziv": "ClueGo Escape Room Zagreb",
+            "web_stranica": "www.cluego.eu",
+            "kontakt": "+385994563099"
+        },
+        "tematika": {
+            "naziv": "Avanturisti�ka"
+        }
+    },
+    {
+        "id": 2,
+        "naziv": "Kra�a Mona Lise",
+        "adresa": "Ulica kneza Borne 12",
+        "tezina": 5,
+        "trajanje_minute": 75,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.cluego.eu/krada-mona-lise/",
+        "tvrtka": {
+            "naziv": "ClueGo Escape Room Zagreb",
+            "web_stranica": "www.cluego.eu",
+            "kontakt": "+385994563099"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 3,
+        "naziv": "Memento",
+        "adresa": "Ulica kneza Borne 12",
+        "tezina": 4,
+        "trajanje_minute": 75,
+        "maks_igraca": 5,
+        "web_stranica": "https://www.cluego.eu/memento/",
+        "tvrtka": {
+            "naziv": "ClueGo Escape Room Zagreb",
+            "web_stranica": "www.cluego.eu",
+            "kontakt": "+385994563099"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 4,
+        "naziv": "Anno",
+        "adresa": "Dra�kovi�eva 29",
+        "tezina": 5,
+        "trajanje_minute": 75,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.cluego.eu/anno-1202/",
+        "tvrtka": {
+            "naziv": "ClueGo Escape Room Zagreb",
+            "web_stranica": "www.cluego.eu",
+            "kontakt": "+385994563099"
+        },
+        "tematika": {
+            "naziv": "Avanturisti�ka"
+        }
+    },
+    {
+        "id": 5,
+        "naziv": "Magi�na knji�nica",
+        "adresa": "Dra�kovi�eva 53",
+        "tezina": 5,
+        "trajanje_minute": 75,
+        "maks_igraca": 6,
+        "web_stranica": "https://escapeart.hr/magicna-knjiznica/",
+        "tvrtka": {
+            "naziv": "Escape Art - Escape Room Zagreb",
+            "web_stranica": "www.escapeart.hr",
+            "kontakt": "+385991697344"
+        },
+        "tematika": {
+            "naziv": "Sci-Fi"
+        }
+    },
+    {
+        "id": 6,
+        "naziv": "Drakuline odaje",
+        "adresa": "Dra�kovi�eva 53",
+        "tezina": 3,
+        "trajanje_minute": 75,
+        "maks_igraca": 6,
+        "web_stranica": "https://escapeart.hr/drakuline-odaje/#rezervacije",
+        "tvrtka": {
+            "naziv": "Escape Art - Escape Room Zagreb",
+            "web_stranica": "www.escapeart.hr",
+            "kontakt": "+385991697344"
+        },
+        "tematika": {
+            "naziv": "Sci-Fi"
+        }
+    },
+    {
+        "id": 7,
+        "naziv": "Robin Hood",
+        "adresa": "Dra�kovi�eva 53",
+        "tezina": 4.5,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://escapeart.hr/robin-hood/#rezervacije",
+        "tvrtka": {
+            "naziv": "Escape Art - Escape Room Zagreb",
+            "web_stranica": "www.escapeart.hr",
+            "kontakt": "+385991697344"
+        },
+        "tematika": {
+            "naziv": "Sci-Fi"
+        }
+    },
+    {
+        "id": 8,
+        "naziv": "Promatra�i",
+        "adresa": "Vodnikova 8",
+        "tezina": 3,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=9",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 9,
+        "naziv": "Ritual",
+        "adresa": "Dra�kovi�eva 72",
+        "tezina": 5,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=8",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 10,
+        "naziv": "Soba Panike",
+        "adresa": "Vodnikova 8",
+        "tezina": 2,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=7",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 11,
+        "naziv": "Narcos",
+        "adresa": "Vodnikova 8",
+        "tezina": 1,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=6",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 12,
+        "naziv": "Presuda",
+        "adresa": "Maksimirska 96",
+        "tezina": 5,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=5",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 13,
+        "naziv": "Mrtva�nica",
+        "adresa": "Maksimirska 96",
+        "tezina": 2,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=4",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 14,
+        "naziv": "Kripta",
+        "adresa": "Vinkovi�eva 6",
+        "tezina": 1,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=3",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 15,
+        "naziv": "Ukleti Hotel",
+        "adresa": "Vinkovi�eva 6",
+        "tezina": 5,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=2",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 16,
+        "naziv": "Otmica",
+        "adresa": "Vinkovi�eva 6",
+        "tezina": 1,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.theoldlockup.com/room-detail.asp?roomid=1",
+        "tvrtka": {
+            "naziv": "The Old Lock Up Escape Room Zagreb",
+            "web_stranica": "www.theoldlockup.com",
+            "kontakt": "+385913630000"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 17,
+        "naziv": "Zodiac killer",
+        "adresa": "Ulica kneza Mislava 14",
+        "tezina": 3,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://zagreb.roomescape.hr/p/rooms/zodiac-killer/",
+        "tvrtka": {
+            "naziv": "Fox in a box - Escape Room Zagreb",
+            "web_stranica": "www.zagreb.roomescape.hr",
+            "kontakt": "+385913697666"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 18,
+        "naziv": "Plja�ka banke",
+        "adresa": "Ulica kneza Mislava 14",
+        "tezina": 2,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://zagreb.roomescape.hr/p/rooms/golden-nugget-saloon/",
+        "tvrtka": {
+            "naziv": "Fox in a box - Escape Room Zagreb",
+            "web_stranica": "www.zagreb.roomescape.hr",
+            "kontakt": "+385913697666"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 19,
+        "naziv": "Bijeg iz zatvora",
+        "adresa": "Ulica kneza Mislava 14",
+        "tezina": 3,
+        "trajanje_minute": 60,
+        "maks_igraca": 6,
+        "web_stranica": "https://zagreb.roomescape.hr/p/rooms/prison-break/",
+        "tvrtka": {
+            "naziv": "Fox in a box - Escape Room Zagreb",
+            "web_stranica": "www.zagreb.roomescape.hr",
+            "kontakt": "+385913697666"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 20,
+        "naziv": "Tajanstveni slu�aj zagreba�ke vje�tice",
+        "adresa": "Krvavi most 3",
+        "tezina": 1,
+        "trajanje_minute": 60,
+        "maks_igraca": 5,
+        "web_stranica": "https://enigmarium.hr/tajanstveni-slucaj-zagrebacke-vjestice/",
+        "tvrtka": {
+            "naziv": "Escape Room Enigmarium Zagreb",
+            "web_stranica": "www.enigmarium.hr",
+            "kontakt": "+385916155456"
+        },
+        "tematika": {
+            "naziv": "Sci-Fi"
+        }
+    },
+    {
+        "id": 21,
+        "naziv": "Femme Fatale",
+        "adresa": "Krvavi most 3",
+        "tezina": 1,
+        "trajanje_minute": 60,
+        "maks_igraca": 5,
+        "web_stranica": "https://enigmarium.hr/femme-fatale/",
+        "tvrtka": {
+            "naziv": "Escape Room Enigmarium Zagreb",
+            "web_stranica": "www.enigmarium.hr",
+            "kontakt": "+385916155456"
+        },
+        "tematika": {
+            "naziv": "Sci-Fi"
+        }
+    },
+    {
+        "id": 22,
+        "naziv": "Laboratorij Crne kraljice",
+        "adresa": "Krvavi most 3",
+        "tezina": 2,
+        "trajanje_minute": 75,
+        "maks_igraca": 5,
+        "web_stranica": "https://enigmarium.hr/laboratorij-crne-kraljice/",
+        "tvrtka": {
+            "naziv": "Escape Room Enigmarium Zagreb",
+            "web_stranica": "www.enigmarium.hr",
+            "kontakt": "+385916155456"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 23,
+        "naziv": "Ozirisov hram",
+        "adresa": "Amru�eva 8",
+        "tezina": 4,
+        "trajanje_minute": 80,
+        "maks_igraca": 8,
+        "web_stranica": "https://portalescape.com/avanture/",
+        "tvrtka": {
+            "naziv": "Escape Room Enigmarium Zagreb",
+            "web_stranica": "www.enigmarium.hr",
+            "kontakt": "+385916155456"
+        },
+        "tematika": {
+            "naziv": "Sci-Fi"
+        }
+    },
+    {
+        "id": 24,
+        "naziv": "Dvorac Crne Kraljice",
+        "adresa": "Amru�eva 8",
+        "tezina": 3,
+        "trajanje_minute": 60,
+        "maks_igraca": 8,
+        "web_stranica": "https://portalescape.com/avanture/",
+        "tvrtka": {
+            "naziv": "Escape Room Enigmarium Zagreb",
+            "web_stranica": "www.enigmarium.hr",
+            "kontakt": "+385916155456"
+        },
+        "tematika": {
+            "naziv": "Avanturisti�ka"
+        }
+    },
+    {
+        "id": 25,
+        "naziv": "Kocke",
+        "adresa": "Amru�eva 8",
+        "tezina": 5,
+        "trajanje_minute": 75,
+        "maks_igraca": 8,
+        "web_stranica": "https://portalescape.com/avanture/",
+        "tvrtka": {
+            "naziv": "Escape Room Enigmarium Zagreb",
+            "web_stranica": "www.enigmarium.hr",
+            "kontakt": "+385916155456"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 26,
+        "naziv": "Tajna Don Carla",
+        "adresa": "Amru�eva 8",
+        "tezina": 3,
+        "trajanje_minute": 75,
+        "maks_igraca": 8,
+        "web_stranica": "https://portalescape.com/avanture/",
+        "tvrtka": {
+            "naziv": "Escape Room Enigmarium Zagreb",
+            "web_stranica": "www.enigmarium.hr",
+            "kontakt": "+385916155456"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 27,
+        "naziv": "Mind Crime",
+        "adresa": "Zagreba�ki Velesajam, Paviljon 35, ulaz ISTOK III",
+        "tezina": 3,
+        "trajanje_minute": 60,
+        "maks_igraca": 5,
+        "web_stranica": "https://www.escape-arena.com/game-rooms/mind-crime-2/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..",
+        "tvrtka": {
+            "naziv": "Portal Escape",
+            "web_stranica": "www.portalescape.com",
+            "kontakt": "+385014444555"
+        },
+        "tematika": {
+            "naziv": "Sci-Fi"
+        }
+    },
+    {
+        "id": 28,
+        "naziv": "The office of John Monroe",
+        "adresa": "Zagreba�ki Velesajam, Paviljon 35, ulaz ISTOK III",
+        "tezina": 3.5,
+        "trajanje_minute": 60,
+        "maks_igraca": 5,
+        "web_stranica": "https://www.escape-arena.com/game-rooms/the-office-of-john-monroe/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..",
+        "tvrtka": {
+            "naziv": "Portal Escape",
+            "web_stranica": "www.portalescape.com",
+            "kontakt": "+385014444555"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 29,
+        "naziv": "The lab of Dr. Lev Pasted",
+        "adresa": "Zagreba�ki Velesajam, Paviljon 35, ulaz ISTOK III",
+        "tezina": 4,
+        "trajanje_minute": 60,
+        "maks_igraca": 5,
+        "web_stranica": "https://www.escape-arena.com/game-rooms/lev-pasted/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..",
+        "tvrtka": {
+            "naziv": "Portal Escape",
+            "web_stranica": "www.portalescape.com",
+            "kontakt": "+385014444555"
+        },
+        "tematika": {
+            "naziv": "Horror"
+        }
+    },
+    {
+        "id": 30,
+        "naziv": "The amazing heist",
+        "adresa": "Zagreba�ki Velesajam, Paviljon 35, ulaz ISTOK III",
+        "tezina": 4.5,
+        "trajanje_minute": 60,
+        "maks_igraca": 5,
+        "web_stranica": "https://www.escape-arena.com/game-rooms/amazing-heist/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..",
+        "tvrtka": {
+            "naziv": "Portal Escape",
+            "web_stranica": "www.portalescape.com",
+            "kontakt": "+385014444555"
+        },
+        "tematika": {
+            "naziv": "Avanturisti�ka"
+        }
+    },
+    {
+        "id": 31,
+        "naziv": "The secret agent room",
+        "adresa": "Zagreba�ki Velesajam, Paviljon 35, ulaz ISTOK III",
+        "tezina": 3.5,
+        "trajanje_minute": 60,
+        "maks_igraca": 5,
+        "web_stranica": "https://www.escape-arena.com/game-rooms/secret-agent-room/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..",
+        "tvrtka": {
+            "naziv": "Portal Escape",
+            "web_stranica": "www.portalescape.com",
+            "kontakt": "+385014444555"
+        },
+        "tematika": {
+            "naziv": "Detektivska"
+        }
+    },
+    {
+        "id": 32,
+        "naziv": "EX(IT) YU",
+        "adresa": "Maru�eve�ka ulica 8",
+        "tezina": 3,
+        "trajanje_minute": 70,
+        "maks_igraca": 6,
+        "web_stranica": "https://www.elephantescape.hr/",
+        "tvrtka": {
+            "naziv": "Escape Room Arena",
+            "web_stranica": "www.escape-arena.com",
+            "kontakt": "+38516024470"
+        },
+        "tematika": {
+            "naziv": "Avanturisti�ka"
+        }
+    }
+]

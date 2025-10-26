@@ -1,0 +1,33 @@
+id,naziv_escape_rooma,adresa,tezina,trajanje_minute,maks_igraca,web_escape_rooma,tvrtka,web_tvrtke,kontakt_tvrtke,tematika
+1,Tajna Profesora Baltazara,Ulica kneza Borne 12,4.5,75,5,https://www.cluego.eu/tajna-profesora-balthazara/,ClueGo Escape Room Zagreb,www.cluego.eu,+385994563099,Avanturistièka
+2,Kraða Mona Lise,Ulica kneza Borne 12,5,75,6,https://www.cluego.eu/krada-mona-lise/,ClueGo Escape Room Zagreb,www.cluego.eu,+385994563099,Detektivska
+3,Memento,Ulica kneza Borne 12,4,75,5,https://www.cluego.eu/memento/,ClueGo Escape Room Zagreb,www.cluego.eu,+385994563099,Detektivska
+4,Anno,Draškoviæeva 29,5,75,6,https://www.cluego.eu/anno-1202/,ClueGo Escape Room Zagreb,www.cluego.eu,+385994563099,Avanturistièka
+5,Magièna knjižnica,Draškoviæeva 53,5,75,6,https://escapeart.hr/magicna-knjiznica/,Escape Art - Escape Room Zagreb,www.escapeart.hr,+385991697344,Sci-Fi
+6,Drakuline odaje,Draškoviæeva 53,3,75,6,https://escapeart.hr/drakuline-odaje/#rezervacije,Escape Art - Escape Room Zagreb,www.escapeart.hr,+385991697344,Sci-Fi
+7,Robin Hood,Draškoviæeva 53,4.5,60,6,https://escapeart.hr/robin-hood/#rezervacije,Escape Art - Escape Room Zagreb,www.escapeart.hr,+385991697344,Sci-Fi
+8,Promatraèi,Vodnikova 8,3,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=9,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+9,Ritual,Draškoviæeva 72,5,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=8,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+10,Soba Panike,Vodnikova 8,2,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=7,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+11,Narcos,Vodnikova 8,1,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=6,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+12,Presuda,Maksimirska 96,5,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=5,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+13,Mrtvaènica,Maksimirska 96,2,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=4,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+14,Kripta,Vinkoviæeva 6,1,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=3,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+15,Ukleti Hotel,Vinkoviæeva 6,5,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=2,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+16,Otmica,Vinkoviæeva 6,1,60,6,https://www.theoldlockup.com/room-detail.asp?roomid=1,The Old Lock Up Escape Room Zagreb,www.theoldlockup.com,+385913630000,Horror
+17,Zodiac killer,Ulica kneza Mislava 14,3,60,6,https://zagreb.roomescape.hr/p/rooms/zodiac-killer/,Fox in a box - Escape Room Zagreb,www.zagreb.roomescape.hr,+385913697666,Detektivska
+18,Pljaèka banke,Ulica kneza Mislava 14,2,60,6,https://zagreb.roomescape.hr/p/rooms/golden-nugget-saloon/,Fox in a box - Escape Room Zagreb,www.zagreb.roomescape.hr,+385913697666,Detektivska
+19,Bijeg iz zatvora,Ulica kneza Mislava 14,3,60,6,https://zagreb.roomescape.hr/p/rooms/prison-break/,Fox in a box - Escape Room Zagreb,www.zagreb.roomescape.hr,+385913697666,Detektivska
+20,Tajanstveni sluèaj zagrebaèke vještice,Krvavi most 3,1,60,5,https://enigmarium.hr/tajanstveni-slucaj-zagrebacke-vjestice/,Escape Room Enigmarium Zagreb,www.enigmarium.hr,+385916155456,Sci-Fi
+21,Femme Fatale,Krvavi most 3,1,60,5,https://enigmarium.hr/femme-fatale/,Escape Room Enigmarium Zagreb,www.enigmarium.hr,+385916155456,Sci-Fi
+22,Laboratorij Crne kraljice,Krvavi most 3,2,75,5,https://enigmarium.hr/laboratorij-crne-kraljice/,Escape Room Enigmarium Zagreb,www.enigmarium.hr,+385916155456,Horror
+23,Ozirisov hram,Amruševa 8,4,80,8,https://portalescape.com/avanture/,Escape Room Enigmarium Zagreb,www.enigmarium.hr,+385916155456,Sci-Fi
+24,Dvorac Crne Kraljice,Amruševa 8,3,60,8,https://portalescape.com/avanture/,Escape Room Enigmarium Zagreb,www.enigmarium.hr,+385916155456,Avanturistièka
+25,Kocke,Amruševa 8,5,75,8,https://portalescape.com/avanture/,Escape Room Enigmarium Zagreb,www.enigmarium.hr,+385916155456,Detektivska
+26,Tajna Don Carla,Amruševa 8,3,75,8,https://portalescape.com/avanture/,Escape Room Enigmarium Zagreb,www.enigmarium.hr,+385916155456,Detektivska
+27,Mind Crime,"Zagrebaèki Velesajam, Paviljon 35, ulaz ISTOK III",3,60,5,https://www.escape-arena.com/game-rooms/mind-crime-2/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..,Portal Escape,www.portalescape.com,+385014444555,Sci-Fi
+28,The office of John Monroe,"Zagrebaèki Velesajam, Paviljon 35, ulaz ISTOK III",3.5,60,5,https://www.escape-arena.com/game-rooms/the-office-of-john-monroe/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..,Portal Escape,www.portalescape.com,+385014444555,Detektivska
+29,The lab of Dr. Lev Pasted,"Zagrebaèki Velesajam, Paviljon 35, ulaz ISTOK III",4,60,5,https://www.escape-arena.com/game-rooms/lev-pasted/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..,Portal Escape,www.portalescape.com,+385014444555,Horror
+30,The amazing heist,"Zagrebaèki Velesajam, Paviljon 35, ulaz ISTOK III",4.5,60,5,https://www.escape-arena.com/game-rooms/amazing-heist/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..,Portal Escape,www.portalescape.com,+385014444555,Avanturistièka
+31,The secret agent room,"Zagrebaèki Velesajam, Paviljon 35, ulaz ISTOK III",3.5,60,5,https://www.escape-arena.com/game-rooms/secret-agent-room/?_gl=1*i3jjc8*_ga*MTY4NTU5MTAzNC4xNzYxNDExNzI1*_up*MQ..,Portal Escape,www.portalescape.com,+385014444555,Detektivska
+32,EX(IT) YU,Maruševeèka ulica 8,3,70,6,https://www.elephantescape.hr/,Escape Room Arena,www.escape-arena.com,+38516024470,Avanturistièka
