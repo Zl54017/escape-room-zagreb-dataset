@@ -22,7 +22,7 @@ async function fetchData(search = '', attribute = 'all') {
     renderTable(data);
     updateDownloadLinks(params);
   } catch (err) {
-    console.error('❌ Greška pri dohvaćanju podataka:', err);
+    console.error('Greška pri dohvaćanju podataka:', err);
   }
 }
 
