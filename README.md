@@ -51,7 +51,7 @@ escape-room-zagreb-dataset/
 
 ## Stranica
 Web sučelje omogućuje jednostavan pregled i pretragu escape roomova iz Zagreba. Podaci su prikazani u tablici s osnovnim informacijama o svakoj igri i pripadajućoj tvrtki.
-**Css generiran preko [https://uiverse.io/](Ui verse stranice)**
+**Css generiran preko [Ui verse stranice](https://uiverse.io/)**
 
 ### Kako koristiti
 
