@@ -1,0 +1,602 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.opis-kartica {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.opis-kartica p {
+    margin: 0;
+}
+
+.opis-kartica a {
+    color: #4a9eff;
+}
+
+.podaci-lista {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #4a4a4a #1a1a1a;
+}
+
+.podaci-lista::-webkit-scrollbar {
+    height: 8px;
+}
+
+.podaci-lista::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.podaci-lista::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 10px;
+}
+
+.podaci-lista::-webkit-scrollbar-thumb:hover {
+    background: #5a5a5a;
+}
+
+.podaci-lista li {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.card {
+    width: 250px;
+    height: 254px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.card strong {
+    color: #4a9eff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin: 40px 0 20px 0;
+    color: #ffffff;
+}
+
+.table-wrapper {
+    width: 100vw;
+    margin: 20px calc(-50vw + 50%);
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 300px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #212121;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+table th {
+    background-color: #2d2d2d;
+    color: #4a9eff;
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 2px solid #4a9eff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #3a3a3a;
+    color: #ffffff;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:hover {
+    background-color: #2a2a2a;
+}
+
+table code {
+    background-color: #1a1a1a;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #4a9eff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.repo-structure {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.repo-structure pre {
+    background-color: #212121;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 0;
+    overflow-x: auto;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.8;
+    border: 1px solid #3a3a3a;
+}
+
+.repo-structure pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+.repo-structure pre::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.repo-structure pre::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 10px;
+}
+
+.repo-structure pre::-webkit-scrollbar-thumb:hover {
+    background: #5a5a5a;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: block;
+    padding: 0.7em 1em;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #4a9eff;
+    letter-spacing: 0.1em;
+    font-family: monospace;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.cube {
+    position: relative;
+    transition: all 0.5s;
+}
+
+.cube .bg-top {
+    position: absolute;
+    height: 10px;
+    background: #4a9eff;
+    bottom: 100%;
+    left: 5px;
+    right: -5px;
+    transform: skew(-45deg, 0);
+    margin: 0;
+    transition: all 0.4s;
+}
+
+.cube .bg-top .bg-inner {
+    bottom: 0;
+}
+
+.cube .bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    background: #4a9eff;
+    transition: all 0.4s;
+}
+
+.cube .bg-right {
+    position: absolute;
+    background: #4a9eff;
+    top: -5px;
+    z-index: 0;
+    bottom: 5px;
+    width: 10px;
+    left: 100%;
+    transform: skew(0, -45deg);
+    transition: all 0.4s;
+}
+
+.cube .bg-right .bg-inner {
+    left: 0;
+}
+
+.cube .bg-inner {
+    background: #1a1a1a;
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+}
+
+.cube .text {
+    position: relative;
+    transition: all 0.4s;
+}
+
+.cube:hover .bg-inner {
+    background: #4a9eff;
+    transition: all 0.4s;
+}
+
+.cube:hover .text {
+    color: #1a1a1a;
+    transition: all 0.4s;
+}
+
+.cube:hover .bg-right,
+.cube:hover .bg,
+.cube:hover .bg-top {
+    background: #1a1a1a;
+}
+
+.cube:active {
+    z-index: 9999;
+    animation: bounce 0.1s linear;
+}
+
+@keyframes bounce {
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+.license-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #212121;
+    border-radius: 15px;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
+    border-left: 4px solid #4a9eff;
+}
+
+.license-section p {
+    margin: 15px 0;
+    line-height: 1.8;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.license-section p:first-child {
+    margin-top: 0;
+}
+
+.license-section p:last-child {
+    margin-bottom: 0;
+}
+
+.license-section strong {
+    color: #4a9eff;
+    font-weight: bold;
+}
+
+.license-section a {
+    color: #4a9eff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.license-section a:hover {
+    color: #6ab8ff;
+    text-decoration: underline;
+}
+
+.datatable-container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.datatable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.datatable-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+.back-link {
+    color: #4a9eff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #6ab8ff;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #282A36;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.data-table thead {
+    background-color: #212121;
+}
+
+.data-table th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
+    border-bottom: 2px solid #3a3a3a;
+}
+
+.data-table th:first-child {
+    width: 50px;
+    text-align: center;
+}
+
+.data-table tbody tr {
+    background-color: #282A36;
+    transition: background-color 0.2s;
+}
+
+.data-table tbody tr:hover {
+    background-color: #323442;
+}
+
+.data-table tbody tr.selected {
+    background-color: #212121;
+}
+
+.data-table td {
+    padding: 15px 20px;
+    color: #F8F8F2;
+    border-bottom: 1px solid #3a3a3a;
+    font-size: 14px;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table td:first-child {
+    text-align: center;
+}
+
+.checkbox-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-cell input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4a9eff;
+}
+
+.id-cell {
+    color: #4a9eff;
+    font-weight: 600;
+}
+
+.naziv-cell {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.adresa-cell {
+    color: #F8F8F2;
+}
+
+.tezina-cell {
+    color: #4a9eff;
+}
+
+.tvrtka-cell {
+    color: #F8F8F2;
+}
+
+.tematika-cell {
+    color: #F8F8F2;
+}
+
+.web-link {
+    color: #4a9eff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.web-link:hover {
+    color: #6ab8ff;
+    text-decoration: underline;
+}
+
+.filter-section {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.filter-form {
+    margin-bottom: 15px;
+}
+
+.filter-inputs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 15px;
+    border: 2px solid #3a3a3a;
+    border-radius: 6px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #4a9eff;
+}
+
+.attribute-select {
+    padding: 12px 15px;
+    border: 2px solid #3a3a3a;
+    border-radius: 6px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    min-width: 150px;
+}
+
+.attribute-select:focus {
+    outline: none;
+    border-color: #4a9eff;
+}
+
+.filter-button,
+.reset-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-button {
+    background-color: #4a9eff;
+    color: #ffffff;
+}
+
+.filter-button:hover {
+    background-color: #3a8eef;
+    transform: translateY(-1px);
+}
+
+.reset-button {
+    background-color: #5a5a5a;
+    color: #ffffff;
+}
+
+.reset-button:hover {
+    background-color: #6a6a6a;
+    transform: translateY(-1px);
+}
+
+.download-section {
+    display: flex;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #3a3a3a;
+}
+
+.download-link {
+    padding: 10px 20px;
+    background-color: #4a9eff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.download-link:hover {
+    background-color: #3a8eef;
+    transform: translateY(-1px);
+}
+
+.download-link:active {
+    transform: translateY(0);
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Escape Room Zagreb – Otvoreni skup podataka</title>
+    <meta name="description"
+        content="Ovaj skup podataka sadrži informacije o escape room igrama dostupnima u Zagrebu. Svaki zapis opisuje pojedini escape room, zajedno s pripadajućom tvrtkom, tematikom, težinom i trajanjem igre.">
+    <meta name="author" content="Zvonko Lelas">
+    <link rel="stylesheet" href="frontend/style.css">
+</head>
+
+<body>
+    <h1>Escape Room Zagreb – Otvoreni skup podataka</h1>
+
+    <div class="opis-kartica">
+        <p>Ovaj skup podataka sadrži informacije o escape room igrama dostupnima u Zagrebu. Svaki zapis opisuje pojedini
+            escape room, zajedno s pripadajućom tvrtkom, tematikom, težinom i trajanjem igre. Podaci su prikupljeni sa
+            stranice <a href="https://www.escaperoomzagreb.com/sve-escape-room-igre-u-hrvatskoj/">Escape Room
+                Zagreb</a>.</p>
+    </div>
+
+    <ul class="podaci-lista">
+        <li>
+            <div class="card">
+                <strong>Naziv skupa podataka:</strong><br>Escape Room Zagreb Dataset
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <strong>Autor:</strong><br>Zvonko Lelas
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <strong>Verzija:</strong><br>1.0
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <strong>Jezik:</strong><br>hrvatski
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <strong>Datum izrade:</strong><br>listopad 2025.
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <strong>Format datoteka:</strong><br>CSV i JSON
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <strong>Broj zapisa:</strong><br>32
+            </div>
+        </li>
+        <li>
+            <div class="card">
+                <strong>Broj atributa:</strong><br>11
+            </div>
+        </li>
+    </ul>
+
+    <h2>Opis atributa</h2>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Atribut</th>
+                    <th>Opis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id</code></td>
+                    <td>Jedinstveni identifikator escape rooma</td>
+                </tr>
+                <tr>
+                    <td><code>naziv</code></td>
+                    <td>Naziv escape room igre</td>
+                </tr>
+                <tr>
+                    <td><code>adresa</code></td>
+                    <td>Lokacija escape rooma</td>
+                </tr>
+                <tr>
+                    <td><code>tezina</code></td>
+                    <td>Težina igre (1–5)</td>
+                </tr>
+                <tr>
+                    <td><code>trajanje_minute</code></td>
+                    <td>Trajanje igre u minutama</td>
+                </tr>
+                <tr>
+                    <td><code>maks_igraca</code></td>
+                    <td>Maksimalan broj igrača</td>
+                </tr>
+                <tr>
+                    <td><code>web_stranica</code></td>
+                    <td>Poveznica na web stranicu igre</td>
+                </tr>
+                <tr>
+                    <td><code>tvrtka.naziv</code></td>
+                    <td>Naziv tvrtke koja nudi escape room</td>
+                </tr>
+                <tr>
+                    <td><code>tvrtka.web_stranica</code></td>
+                    <td>Web stranica tvrtke</td>
+                </tr>
+                <tr>
+                    <td><code>tvrtka.kontakt</code></td>
+                    <td>Kontakt broj tvrtke</td>
+                </tr>
+                <tr>
+                    <td><code>tematika.naziv</code></td>
+                    <td>Tematika igre (npr. horror, detektivska, avanturistička, sci-fi)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Struktura repozitorija</h2>
+    <div class="repo-structure">
+        <pre>
+escape-room-zagreb-dataset/
+│
+├── README.md
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── schema.json
+├── escape_room.csv
+├── escape_room.json
+├── escape_room_dump.sql
+├── index.html
+├── datatable.html
+├── backend/
+│   └── server.js
+└── frontend/
+    ├── main.js
+    └── style.css
+        </pre>
+    </div>
+
+    <h2>Preuzmite podatke</h2>
+    <div class="download-buttons">
+        <a href="escape_room.csv" download class="btn cube cube-hover">
+            <div class="bg-top">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="text">Preuzmi CSV</div>
+        </a>
+        <a href="escape_room.json" download class="btn cube cube-hover">
+            <div class="bg-top">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="text">Preuzmi JSON</div>
+        </a>
+        <a href="datatable.html" class="btn cube cube-hover">
+            <div class="bg-top">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="text">Prikaži podatke</div>
+        </a>
+    </div>
+
+    <h2>Licenca</h2>
+    <div class="license-section">
+        <p>Ovaj skup podataka objavljen je pod licencom <strong>Creative Commons CC0 1.0 Universal (Public Domain
+                Dedication)</strong>. To znači da se podaci mogu slobodno koristiti, dijeliti, mijenjati i ponovno
+            objavljivati u bilo koje svrhe, uključujući komercijalne, bez potrebe za navođenjem izvora.</p>
+        <p>Više informacija o licenci dostupno je na <a href="https://creativecommons.org/publicdomain/zero/1.0/"
+                target="_blank">službenoj stranici</a></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room Zagreb - Tablica podataka</title>
+    <link rel="stylesheet" href="frontend/style.css">
+</head>
+<body>
+    <div class="datatable-container">
+        <div class="datatable-header">
+            <h1>Escape Room Zagreb - Podaci</h1>
+            <a href="index.html" class="back-link">← Povratak na početnu</a>
+        </div>
+        
+        <div class="filter-section">
+            <form id="filter-form" class="filter-form">
+                <div class="filter-inputs">
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Unesite tekst za pretragu..." 
+                        class="search-input"
+                    >
+                    <select id="attribute-select" class="attribute-select">
+                        <option value="all">Svi atributi</option>
+                        <option value="naziv">Naziv</option>
+                        <option value="adresa">Adresa</option>
+                        <option value="tezina">Težina</option>
+                        <option value="trajanje_minute">Trajanje (min)</option>
+                        <option value="maks_igraca">Maks igrača</option>
+                        <option value="tvrtka">Tvrtka</option>
+                        <option value="tematika">Tematika</option>
+                    </select>
+                    <button type="submit" class="filter-button">Pretraži</button>
+                    <button type="button" id="reset-button" class="reset-button">Poništi</button>
+                </div>
+            </form>
+            <div class="download-section">
+                <a id="download-json" href="#" class="download-link" download="escape-rooms.json">Preuzmi JSON</a>
+                <a id="download-csv" href="#" class="download-link" download="escape-rooms.csv">Preuzmi CSV</a>
+            </div>
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Naziv</th>
+                    <th>Adresa</th>
+                    <th>Težina</th>
+                    <th>Trajanje (min)</th>
+                    <th>Maks igrača</th>
+                    <th>Tvrtka</th>
+                    <th>Tematika</th>
+                    <th>Web stranica</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Podaci će biti učitani JavaScriptom -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="frontend/main.js"></script>
+</body>
+</html>
+

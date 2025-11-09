@@ -1,0 +1,94 @@
+{
+  "$id": "https://github.com/zvonko-lelas/escape-room-zagreb-dataset/schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Escape Room Zagreb Dataset Schema",
+  "description": "Skup podataka o escape room igrama u Zagrebu.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "title": "Escape Room",
+    "description": "Pojedinačni escape room u Zagrebu",
+    "required": ["id", "naziv"],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "title": "Identifikator",
+        "description": "Jedinstveni identifikator escape rooma",
+        "minimum": 1
+      },
+      "naziv": {
+        "type": "string",
+        "title": "Naziv",
+        "description": "Naziv escape rooma"
+      },
+      "adresa": {
+        "type": "string",
+        "title": "Adresa",
+        "description": "Lokacija escape rooma (adresa u Zagrebu)"
+      },
+      "tezina": {
+        "type": "number",
+        "title": "Težina",
+        "description": "Težina escape rooma na skali od 1 do 5, gdje 1 predstavlja najlakšu, a 5 najtežu igru",
+        "minimum": 1,
+        "maximum": 5
+      },
+      "trajanje_minute": {
+        "type": "integer",
+        "title": "Trajanje u minutama",
+        "description": "Trajanje escape rooma izraženo u minutama",
+        "minimum": 1
+      },
+      "maks_igraca": {
+        "type": "integer",
+        "title": "Maksimalan broj igrača",
+        "description": "Maksimalan broj igrača koji mogu sudjelovati u escape roomu",
+        "minimum": 1
+      },
+      "web_stranica": {
+        "type": "string",
+        "format": "uri",
+        "title": "Web stranica",
+        "description": "Poveznica na web stranicu escape rooma"
+      },
+      "tvrtka": {
+        "type": "object",
+        "title": "Tvrtka",
+        "description": "Informacije o tvrtki koja nudi escape room",
+        "properties": {
+          "naziv": {
+            "type": "string",
+            "title": "Naziv tvrtke",
+            "description": "Naziv tvrtke koja nudi escape room"
+          },
+          "web_stranica": {
+            "type": "string",
+            "title": "Web stranica tvrtke",
+            "description": "Web stranica tvrtke koja nudi escape room"
+          },
+          "kontakt": {
+            "type": "string",
+            "title": "Kontakt",
+            "description": "Kontakt broj tvrtke koja nudi escape room"
+          }
+        },
+        "required": ["naziv"]
+      },
+      "tematika": {
+        "type": "object",
+        "title": "Tematika",
+        "description": "Informacije o tematici escape rooma",
+        "properties": {
+          "naziv": {
+            "type": "string",
+            "title": "Naziv teme",
+            "description": "Tematika escape rooma (npr. horror, detektivska, avanturistička, sci-fi)",
+            "enum": ["Horror", "Detektivska", "Sci-Fi", "Avanturistička"]
+          }
+        },
+        "required": ["naziv"]
+      }
+    }
+  }
+}
+

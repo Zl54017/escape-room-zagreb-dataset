@@ -34,10 +34,39 @@ escape-room-zagreb-dataset/
 │
 ├── README.md
 ├── LICENSE
+├── package.json
+├── package-lock.json
+├── schema.json
 ├── escape_room.csv
 ├── escape_room.json
-└── escape_room_dump.sql
+├── escape_room_dump.sql
+├── index.html
+├── datatable.html
+├── backend/
+│   └── server.js
+└── frontend/
+    ├── main.js
+    └── style.css
 ```
+
+## Stranica
+Web sučelje omogućuje jednostavan pregled i pretragu escape roomova iz Zagreba. Podaci su prikazani u tablici s osnovnim informacijama o svakoj igri i pripadajućoj tvrtki.
+**Css generiran preko [https://uiverse.io/](Ui verse stranice)**
+
+### Kako koristiti
+
+1. **Pokrenite lokalni server**
+
+   U direktoriju `backend` pokrenite:
+   ```
+   npm install
+   node server.js
+   ```
+
+2. **Otvorite `datatable.html`**
+
+   U pregledniku otvorite datoteku `datatable.html`. Možete pretraživati i filtrirati podatke po svim ključnim atributima. Moguće je i preuzeti podatke u CSV ili JSON obliku putem gumba na stranici.
+
 
 ## Licenca
 
