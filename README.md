@@ -68,6 +68,100 @@ Web sučelje omogućuje jednostavan pregled i pretragu escape roomova iz Zagreba
    U pregledniku otvorite datoteku `datatable.html`. Možete pretraživati i filtrirati podatke po svim ključnim atributima. Moguće je i preuzeti podatke u CSV ili JSON obliku putem gumba na stranici.
 
 
+## REST API
+
+#### 1. Dohvati sve escape roomove
+```
+GET /api/v1/escape-rooms
+```
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/v1/escape-rooms`
+- **Headers:** Nema potrebnih headera
+
+#### 2. Dohvati escape room po ID-u
+```
+GET /api/v1/escape-rooms/:id
+```
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/v1/escape-rooms/1`
+- **Headers:** Nema potrebnih headera
+
+#### 3. Dohvati sve tvrtke
+```
+GET /api/v1/companies
+```
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/v1/companies`
+- **Headers:** Nema potrebnih headera
+
+#### 4. Dohvati escape roomove po tvrtki
+```
+GET /api/v1/escape-rooms/company/:companyId
+```
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/v1/escape-rooms/company/1`
+- **Headers:** Nema potrebnih headera
+
+#### 5. Dohvati escape roomove po tematici
+```
+GET /api/v1/escape-rooms/theme/:themeId
+```
+- **Method:** GET
+- **URL:** `http://localhost:3000/api/v1/escape-rooms/theme/1`
+- **Headers:** Nema potrebnih headera
+
+#### 6. Kreiraj novi escape room
+```
+POST /api/v1/escape-rooms
+```
+- **Method:** POST
+- **URL:** `http://localhost:3000/api/v1/escape-rooms`
+- **Headers:**
+  - `Content-Type: application/json`
+- **Body (raw JSON):**
+```json
+{
+  "naziv": "Novi Escape Room",
+  "adresa": "Ulica Primjer 123",
+  "tezina": 3.5,
+  "trajanje_minute": 60,
+  "maks_igraca": 6,
+  "web_stranica": "https://example.com/escape-room",
+  "tvrtka_id": 1,
+  "tematika_id": 1
+}
+```
+
+#### 7. Ažuriraj escape room
+```
+PUT /api/v1/escape-rooms/:id
+```
+- **Method:** PUT
+- **URL:** `http://localhost:3000/api/v1/escape-rooms/1`
+- **Headers:**
+  - `Content-Type: application/json`
+- **Body (raw JSON):**
+```json
+{
+  "naziv": "Ažurirani Naziv",
+  "adresa": "Nova Adresa 456",
+  "tezina": 4.0,
+  "trajanje_minute": 90,
+  "maks_igraca": 8,
+  "web_stranica": "https://example.com/updated",
+  "tvrtka_id": 1,
+  "tematika_id": 2
+}
+```
+
+#### 8. Obriši escape room
+```
+DELETE /api/v1/escape-rooms/:id
+```
+- **Method:** DELETE
+- **URL:** `http://localhost:3000/api/v1/escape-rooms/1`
+- **Headers:** Nema potrebnih headera
+
 ## Licenca
 
 Ovaj skup podataka objavljen je pod licencom **Creative Commons CC0 1.0 Universal (Public Domain Dedication)**.

@@ -1,0 +1,265 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Escape Room Zagreb API",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Zvonko Lelas",
+      "email": "zvonko.lelas@fer.hr"
+    },
+    "license": {
+      "name": "CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  "paths": {
+    "/api/v1/openapi.json": {
+      "get": {
+        "summary": "Get OpenAPI specification",
+        "description": "Returns the OpenAPI 3.0 specification for this API",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OpenAPI specification"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/v1/escape-rooms": {
+      "get": {
+        "summary": "Get all escape rooms",
+        "description": "Returns all escape rooms",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Escape rooms fetched successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create escape room",
+        "description": "Creates a new escape room",
+        "produces": ["application/json"],
+        "parameters": [
+            {
+                "name": "escape-room",
+                "in": "body",
+                "description": "Escape room to create",
+                "required": true,
+                "type": "object",
+                "format": {
+                    "naziv": "string",
+                    "adresa": "string",
+                    "tezina": "number",
+                    "trajanje_minute": "integer",
+                    "maks_igraca": "integer",
+                    "web_stranica": "string",
+                    "tvrtka_id": "integer",
+                    "tematika_id": "integer"
+                }
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "Escape room created successfully"
+          },
+          "400": {
+            "description": "All fields are required"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/v1/escape-rooms/:id": {
+      "get": {
+        "summary": "Get escape room by ID",
+        "description": "Returns an escape room by ID",
+        "produces": ["application/json"],
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "description": "Escape room ID",
+                "required": true,
+                "type": "integer",
+                "format": "int64"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "Escape room fetched successfully"
+          },
+          "400": {
+            "description": "Escape room ID is a required number"
+          },
+          "404": {
+            "description": "Escape room with this ID does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update escape room",
+        "description": "Updates an escape room",
+        "produces": ["application/json"],
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "description": "Escape room ID",
+                "required": true,
+                "type": "integer",
+                "format": "int64"
+            },
+            {
+                "name": "escape-room",
+                "in": "body",
+                "description": "Escape room to update",
+                "required": true,
+                "type": "object",
+                "format": {
+                    "naziv": "string",
+                    "adresa": "string",
+                    "tezina": "number",
+                    "trajanje_minute": "integer",
+                    "maks_igraca": "integer",
+                    "web_stranica": "string",
+                    "tvrtka_id": "integer",
+                    "tematika_id": "integer"
+                }
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "Escape room updated successfully"
+          },
+          "400": {
+            "description": "All fields are required"
+          },
+          "404": {
+            "description": "Escape room with this ID does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete escape room",
+        "description": "Deletes an escape room",
+        "produces": ["application/json"],
+        "parameters": [
+            {
+                "name": "id",
+                "in": "path",
+                "description": "Escape room ID",
+                "required": true,
+                "type": "integer",
+                "format": "int64"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "Escape room deleted successfully"
+          },
+          "400": {
+            "description": "Escape room ID is a required number"
+          },
+          "404": {
+            "description": "Escape room with this ID does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/v1/companies": {
+      "get": {
+        "summary": "Get all companies",
+        "description": "Returns all companies",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Companies fetched successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/v1/escape-rooms/company/:companyId": {
+      "get": {
+        "summary": "Get escape rooms by company ID",
+        "description": "Returns escape rooms by company ID",
+        "produces": ["application/json"],
+        "parameters": [
+            {
+                "name": "companyId",
+                "in": "path",
+                "description": "Company ID",
+                "required": true,
+                "type": "integer",
+                "format": "int64"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "Escape rooms by company fetched successfully"
+          },
+          "400": {
+            "description": "Company ID is a required number"
+          },
+          "404": {
+            "description": "Company with this ID does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/v1/escape-rooms/theme/:themeId": {
+      "get": {
+        "summary": "Get escape rooms by theme ID",
+        "description": "Returns escape rooms by theme ID",
+        "produces": ["application/json"],
+        "parameters": [
+            {
+                "name": "themeId",
+                "in": "path",
+                "description": "Theme ID",
+                "required": true,
+                "type": "integer",
+                "format": "int64"
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "Escape rooms by theme fetched successfully"
+          },
+          "400": {
+            "description": "Theme ID is a required number"
+          },
+          "404": {
+            "description": "Theme with this ID does not exist"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  }
+}
