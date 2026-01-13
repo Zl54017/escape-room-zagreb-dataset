@@ -11,7 +11,14 @@
 </head>
 
 <body>
-    <h1>Escape Room Zagreb – Otvoreni skup podataka</h1>
+    <div class="header">
+        <h1>Escape Room Zagreb – Otvoreni skup podataka</h1>
+        <div class="navigation-links">
+            <a href="http://localhost:3000/login" id="login-link">Prijava</a>
+            <a href="profile.html" id="profile-link">Korisnički profil</a>
+            <a href="http://localhost:3000/logout" id="logout-link">Odjava</a>
+        </div>
+    </div>
 
     <div class="opis-kartica">
         <p>Ovaj skup podataka sadrži informacije o escape room igrama dostupnima u Zagrebu. Svaki zapis opisuje pojedini
@@ -192,6 +199,39 @@ escape-room-zagreb-dataset/
         <p>Više informacija o licenci dostupno je na <a href="https://creativecommons.org/publicdomain/zero/1.0/"
                 target="_blank">službenoj stranici</a></p>
     </div>
+    <script>
+        async function checkAuthStatus() {
+            try {
+                const response = await fetch('http://localhost:3000/api/v1/auth/status');
+                const data = await response.json();
+                const isAuthenticated = data.response?.authenticated || false;
+                
+                const loginLink = document.getElementById('login-link');
+                const profileLink = document.getElementById('profile-link');
+                const logoutLink = document.getElementById('logout-link');
+                
+                if (isAuthenticated) {
+                    if (loginLink) loginLink.style.display = 'none';
+                    if (profileLink) profileLink.style.display = 'inline';
+                    if (logoutLink) logoutLink.style.display = 'inline';
+                } else {
+                    if (loginLink) loginLink.style.display = 'inline';
+                    if (profileLink) profileLink.style.display = 'none';
+                    if (logoutLink) logoutLink.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error checking auth status:', error);
+                const loginLink = document.getElementById('login-link');
+                const profileLink = document.getElementById('profile-link');
+                const logoutLink = document.getElementById('logout-link');
+                if (loginLink) loginLink.style.display = 'inline';
+                if (profileLink) profileLink.style.display = 'none';
+                if (logoutLink) logoutLink.style.display = 'none';
+            }
+        }
+        
+        checkAuthStatus();
+    </script>
 </body>
 
 </html>

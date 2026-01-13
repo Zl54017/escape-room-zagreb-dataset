@@ -19,6 +19,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^4.21.2",
+    "express-openid-connect": "^2.19.4",
+    "jsonwebtoken": "^9.0.3",
+    "jwks-rsa": "^3.2.0",
     "pg": "^8.16.3"
   },
   "devDependencies": {

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room Zagreb - Korisnički profil</title>
+    <link rel="stylesheet" href="frontend/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Escape Room Zagreb - Korisnički profil</h1>
+    </div>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h2>Korisnički profil</h2>
+        </div>
+        <div class="profile-body">
+            <table class="profile-table" id="profile-table">
+                <tbody id="profile-data">
+                    <!-- Podatci ce biti ucitani JavaScriptom -->
+                </tbody>
+            </table>
+        </div>
+        <div class="profile-footer">
+            <a href="index.html" class="back-button">← Povratak na početnu</a>
+            <a href="http://localhost:3000/logout" class="logout-button">Odjava</a>
+        </div>
+    </div>
+    <script>
+        async function checkAuthAndLoad() {
+            try {
+                const authResponse = await fetch('http://localhost:3000/api/v1/auth/status');
+                const authData = await authResponse.json();
+                const isAuthenticated = authData.response?.authenticated || false;
+                
+                if (!isAuthenticated) {
+                    document.body.innerHTML = `
+                        <div class="header">
+                            <h1>Escape Room Zagreb - Korisnički profil</h1>
+                        </div>
+                        <div style="text-align: center; padding: 50px;">
+                            <h2>Pristup odbijen</h2>
+                            <p>Morate biti prijavljeni da biste pristupili ovoj stranici.</p>
+                            <a href="http://localhost:3000/login" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Prijavite se</a>
+                            <br><br>
+                            <a href="index.html" style="color: #007bff; text-decoration: none;">← Povratak na početnu</a>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const profileResponse = await fetch('http://localhost:3000/api/v1/profile');
+                if (!profileResponse.ok) {
+                    throw new Error('Greška pri dohvaćanju profila');
+                }
+                const profileData = await profileResponse.json();
+                const user = profileData.response;
+                
+                const profileTable = document.getElementById('profile-data');
+                const fields = [
+                    { label: 'Korisničko ime', value: user.nickname || user.name || '-' },
+                    { label: 'Email', value: user.email || '-' },
+                    { label: 'Email potvrđen', value: user.email_verified ? 'Da' : 'Ne' },
+                    { label: 'Ime', value: user.name || '-' },
+                    { label: 'ID', value: user.sub || '-' },
+                    { label: 'Zadnje ažuriranje', value: user.updated_at ? new Date(user.updated_at).toLocaleString('hr-HR') : '-' }
+                ];
+                
+                profileTable.innerHTML = fields.map(field => `
+                    <tr>
+                        <td class="profile-label"><strong>${field.label}:</strong></td>
+                        <td class="profile-value">${field.value}</td>
+                    </tr>
+                `).join('');
+                
+                if (user.picture) {
+                    profileTable.innerHTML = `
+                        <tr>
+                            <td colspan="2" style="text-align: center; padding: 20px;">
+                                <img src="${user.picture}" alt="Profilna slika" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover;">
+                            </td>
+                        </tr>
+                    ` + profileTable.innerHTML;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.body.innerHTML = `
+                    <div class="header">
+                        <h1>Escape Room Zagreb - Korisnički profil</h1>
+                    </div>
+                    <div style="text-align: center; padding: 50px;">
+                        <h2>Greška</h2>
+                        <p>Došlo je do greške pri učitavanju profila.</p>
+                        <a href="index.html" style="color: #007bff; text-decoration: none;">← Povratak na početnu</a>
+                    </div>
+                `;
+            }
+        }
+        
+        checkAuthAndLoad();
+    </script>
+</body>
+</html>

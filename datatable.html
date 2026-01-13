@@ -39,6 +39,7 @@
             <div class="download-section">
                 <a id="download-json" href="#" class="download-link" download="escape-rooms.json">Preuzmi JSON</a>
                 <a id="download-csv" href="#" class="download-link" download="escape-rooms.csv">Preuzmi CSV</a>
+                <p id="download-message" style="display: none; color: #dc3545; margin-top: 10px; font-weight: bold;">Morate biti prijavljeni</p>
             </div>
         </div>
         
@@ -63,6 +64,82 @@
     </div>
 
     <script src="frontend/main.js"></script>
+    <script>
+        let isAuthenticated = false;
+        
+        async function checkAuthStatus() {
+            try {
+                const response = await fetch('http://localhost:3000/api/v1/auth/status');
+                const data = await response.json();
+                isAuthenticated = data.response?.authenticated || false;
+                
+                const downloadMessage = document.getElementById('download-message');
+                const downloadJson = document.getElementById('download-json');
+                const downloadCsv = document.getElementById('download-csv');
+                
+                if (!isAuthenticated) {
+                    if (downloadMessage) downloadMessage.style.display = 'block';
+                    if (downloadJson) {
+                        downloadJson.style.pointerEvents = 'none';
+                        downloadJson.style.opacity = '0.5';
+                        downloadJson.style.cursor = 'not-allowed';
+                    }
+                    if (downloadCsv) {
+                        downloadCsv.style.pointerEvents = 'none';
+                        downloadCsv.style.opacity = '0.5';
+                        downloadCsv.style.cursor = 'not-allowed';
+                    }
+                } else {
+                    if (downloadMessage) downloadMessage.style.display = 'none';
+                    if (downloadJson) {
+                        downloadJson.style.pointerEvents = 'auto';
+                        downloadJson.style.opacity = '1';
+                        downloadJson.style.cursor = 'pointer';
+                    }
+                    if (downloadCsv) {
+                        downloadCsv.style.pointerEvents = 'auto';
+                        downloadCsv.style.opacity = '1';
+                        downloadCsv.style.cursor = 'pointer';
+                    }
+                }
+            } catch (error) {
+                console.error('Error checking auth status:', error);
+            }
+        }
+        
+        function setupDownloadHandlers() {
+            const downloadJson = document.getElementById('download-json');
+            const downloadCsv = document.getElementById('download-csv');
+            
+            if (downloadJson) {
+                downloadJson.addEventListener('click', (e) => {
+                    if (!isAuthenticated) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return false;
+                    }
+                });
+            }
+            
+            if (downloadCsv) {
+                downloadCsv.addEventListener('click', (e) => {
+                    if (!isAuthenticated) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return false;
+                    }
+                });
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuthStatus();
+            setupDownloadHandlers();
+            setTimeout(() => {
+                checkAuthStatus();
+            }, 200);
+        });
+    </script>
 </body>
 </html>
 

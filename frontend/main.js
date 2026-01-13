@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/escape-rooms';
+const API_URL = 'http://localhost:3000/api/v1/escape-rooms';
 
 let currentData = [];
 let currentSearch = '';
@@ -13,7 +13,9 @@ async function fetchData(search = '', attribute = 'all') {
 
   try {
     const res = await fetch(url);
-    const data = await res.json();
+    const json = await res.json();
+
+    const data = json.response || [];
 
     currentData = data;
     currentSearch = search;
@@ -33,7 +35,9 @@ function renderTable(data) {
   if (!data.length) {
     tbody.innerHTML = `
       <tr>
-        <td colspan="9" class="text-center" style="padding: 20px;">Nema podataka za prikaz</td>
+        <td colspan="9" class="text-center" style="padding: 20px;">
+          Nema podataka za prikaz
+        </td>
       </tr>`;
     return;
   }
@@ -48,15 +52,21 @@ function renderTable(data) {
       <td>${room.maks_igraca ?? '-'}</td>
       <td>${room.tvrtka?.naziv ?? '-'}</td>
       <td>${room.tematika?.naziv ?? '-'}</td>
-      <td>${room.web_stranica ? `<a href="${room.web_stranica}" target="_blank">Pogledaj</a>` : '-'}</td>
+      <td>
+        ${room.web_stranica
+          ? `<a href="${room.web_stranica}" target="_blank">Pogledaj</a>`
+          : '-'}
+      </td>
     </tr>
   `).join('');
 }
 
 function updateDownloadLinks(params) {
   const query = params.toString() ? `?${params}` : '';
-  document.getElementById('download-json').href = `${API_URL}/download/json${query}`;
-  document.getElementById('download-csv').href = `${API_URL}/download/csv${query}`;
+  document.getElementById('download-json').href =
+    `${API_URL}/export/json${query}`;
+  document.getElementById('download-csv').href =
+    `${API_URL}/export/csv${query}`;
 }
 
 document.getElementById('filter-form')?.addEventListener('submit', e => {
