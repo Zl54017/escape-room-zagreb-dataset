@@ -151,6 +151,78 @@ app.get('/api/v1/escape-rooms', async (req, res) => {
   }
 });
 
+app.get('/api/v1/escape-rooms/jsonld', requiresAuth(), async (req, res) => {
+  try {
+    const { search, attribute } = req.query;
+    const rows = await fetchEscapeRooms(search, attribute, true);
+
+    const jsonldData = {
+      "@context": "https://schema.org/",
+      "@type": "Dataset",
+      "name": "Escape Room Zagreb Dataset",
+      "description": "Skup podataka o escape room igrama u Zagrebu",
+      "creator": {
+        "@type": "Person",
+        "name": "Zvonko Lelas"
+      },
+      "about": rows.map(er => {
+        const tvrtka = er.tvrtka && typeof er.tvrtka === 'object' ? er.tvrtka : null;
+        const tematika = er.tematika && typeof er.tematika === 'object' ? er.tematika : null;
+
+        const item = {
+          "@type": "Event",
+          "@id": `http://localhost:3000/escape-rooms/${er.id}`,
+          "name": er.naziv || null,
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "maximumAttendeeCapacity": er.maks_igraca || null,
+          "url": er.web_stranica || null
+        };
+        
+        if (er.trajanje_minute) {
+          item.duration = `PT${er.trajanje_minute}M`;
+        }
+        
+        if (er.adresa) {
+          item.location = {
+            "@type": "Place",
+            "address": er.adresa
+          };
+        }
+        
+        if (tvrtka && (tvrtka.naziv || tvrtka.web_stranica || tvrtka.kontakt)) {
+          item.organizer = {
+            "@type": "Organization",
+            "name": tvrtka.naziv || null,
+            "url": tvrtka.web_stranica || null
+          };
+          
+          if (tvrtka.kontakt) {
+            item.organizer.contactPoint = {
+              "@type": "ContactPoint",
+              "telephone": tvrtka.kontakt
+            };
+          }
+        }
+        
+        if (tematika && tematika.naziv) {
+          item.about = {
+            "@type": "Thing",
+            "name": tematika.naziv
+          };
+        }
+        
+        return item;
+      })
+    };
+
+    res.setHeader('Content-Type', 'application/ld+json');
+    res.json(jsonldData);
+  } catch (err) {
+    console.error(err);
+    error(res, 500, "Error generating JSON-LD data");
+  }
+});
+
 app.get('/api/v1/escape-rooms/:id', async (req, res) => {
   const { id } = req.params;
   if (isNaN(id)) {

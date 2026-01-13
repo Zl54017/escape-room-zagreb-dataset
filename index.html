@@ -189,6 +189,18 @@ escape-room-zagreb-dataset/
             </div>
             <div class="text">Prikaži podatke</div>
         </a>
+        <a href="#" id="refresh-downloads-btn" class="btn cube cube-hover" style="display: none;">
+            <div class="bg-top">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+                <div class="bg-inner"></div>
+            </div>
+            <div class="text">Osvježi preslike</div>
+        </a>
     </div>
 
     <h2>Licenca</h2>
@@ -209,26 +221,116 @@ escape-room-zagreb-dataset/
                 const loginLink = document.getElementById('login-link');
                 const profileLink = document.getElementById('profile-link');
                 const logoutLink = document.getElementById('logout-link');
+                const refreshBtn = document.getElementById('refresh-downloads-btn');
                 
                 if (isAuthenticated) {
                     if (loginLink) loginLink.style.display = 'none';
                     if (profileLink) profileLink.style.display = 'inline';
                     if (logoutLink) logoutLink.style.display = 'inline';
+                    if (refreshBtn) refreshBtn.style.display = 'inline-block';
                 } else {
                     if (loginLink) loginLink.style.display = 'inline';
                     if (profileLink) profileLink.style.display = 'none';
                     if (logoutLink) logoutLink.style.display = 'none';
+                    if (refreshBtn) refreshBtn.style.display = 'none';
                 }
             } catch (error) {
                 console.error('Error checking auth status:', error);
                 const loginLink = document.getElementById('login-link');
                 const profileLink = document.getElementById('profile-link');
                 const logoutLink = document.getElementById('logout-link');
+                const refreshBtn = document.getElementById('refresh-downloads-btn');
                 if (loginLink) loginLink.style.display = 'inline';
                 if (profileLink) profileLink.style.display = 'none';
                 if (logoutLink) logoutLink.style.display = 'none';
+                if (refreshBtn) refreshBtn.style.display = 'none';
             }
         }
+        
+        function jsonLdToCSV(jsonldData) {
+            if (!jsonldData || !jsonldData.about) {
+                throw new Error('Neispravan format podataka za CSV');
+            }
+            
+            const headers = ['ID', 'Naziv', 'Adresa', 'Težina', 'Trajanje (min)', 'Maks igrača', 'Tvrtka', 'Tematika', 'Web stranica'];
+            const rows = jsonldData.about.map(item => {
+                const id = item['@id'] ? item['@id'].split('/').pop() : '';
+                const duration = item.duration ? item.duration.replace('PT', '').replace('M', '') : '';
+                const organizerName = item.organizer?.name || '';
+                const address = item.location?.address || '';
+                const tematika = item.about?.name || '';
+                
+                return [
+                    id,
+                    `"${(item.name || '').replace(/"/g, '""')}"`,
+                    `"${address.replace(/"/g, '""')}"`,
+                    '',
+                    duration,
+                    item.maximumAttendeeCapacity || '',
+                    `"${organizerName.replace(/"/g, '""')}"`,
+                    `"${tematika.replace(/"/g, '""')}"`,
+                    `"${(item.url || '').replace(/"/g, '""')}"`
+                ];
+            });
+            
+            return [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
+        }
+        
+        async function downloadBothFiles() {
+            try {
+                const response = await fetch('http://localhost:3000/api/v1/escape-rooms/jsonld', {
+                    credentials: 'include'
+                });
+                if (!response.ok) {
+                    if (response.status === 401 || response.status === 403) {
+                        alert('Morate biti prijavljeni da biste preuzeli podatke');
+                        return;
+                    }
+                    const errorText = await response.text();
+                    console.error('Error response:', errorText);
+                    throw new Error('Greška pri dohvaćanju podataka');
+                }
+                const jsonldData = await response.json();
+                
+                if (!jsonldData || !jsonldData.about) {
+                    throw new Error('Neispravan format podataka');
+                }
+                
+                const jsonldBlob = new Blob([JSON.stringify(jsonldData, null, 2)], { type: 'application/ld+json' });
+                const jsonldUrl = URL.createObjectURL(jsonldBlob);
+                const jsonldLink = document.createElement('a');
+                jsonldLink.href = jsonldUrl;
+                jsonldLink.download = 'escape_room.jsonld';
+                document.body.appendChild(jsonldLink);
+                jsonldLink.click();
+                document.body.removeChild(jsonldLink);
+                URL.revokeObjectURL(jsonldUrl);
+                
+                const csvContent = jsonLdToCSV(jsonldData);
+                const csvBlob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' });
+                const csvUrl = URL.createObjectURL(csvBlob);
+                const csvLink = document.createElement('a');
+                csvLink.href = csvUrl;
+                csvLink.download = 'escape_room.csv';
+                document.body.appendChild(csvLink);
+                csvLink.click();
+                document.body.removeChild(csvLink);
+                URL.revokeObjectURL(csvUrl);
+            } catch (error) {
+                console.error('Error downloading files:', error);
+                alert('Greška pri preuzimanju datoteka: ' + error.message);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const refreshBtn = document.getElementById('refresh-downloads-btn');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    downloadBothFiles();
+                });
+            }
+        });
         
         checkAuthStatus();
     </script>
